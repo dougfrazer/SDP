@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  fizEvent</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">fizEvent</A></H2></H2><BLOCKQUOTE>The fizEvent captures information relevant to a single event such as a ball-ball collision, ball motion state transition, or ball-rail collision.</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.30.1">fizEvent</A></B>()
+<DD><I>Constructor </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.30.2">fizEvent</A></B>(Event e)
+<DD><I>Constructor </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.30.3">fizEvent</A></B>( const <!1><A HREF="fizEvent.html#DOC.30.3">fizEvent</A> &amp;rhs )
+<DD><I>Copy constructor </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizEvent.html">fizEvent</A> <B><A HREF="#DOC.30.4">operator= </A></B>( const <!1><A HREF="fizEvent.html">fizEvent</A> &amp;rhs )
+<DD><I>Assignment operator </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   <B><A HREF="#DOC.30.5">~fizEvent</A></B>()
+<DD><I>Destructor </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>double <B><A HREF="#DOC.30.6">getTime</A></B>()
+<DD><I>Returns the time (in seconds) at which the event occured.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="EventType.html">EventType</A> <B><A HREF="#DOC.30.7">getType</A></B>()
+<DD><I>Returns the type of event.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>string <B><A HREF="#DOC.30.8">getTypeString</A></B>()
+<DD><I>Returns a string representing the type of event.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="BallType.html">BallType</A> <B><A HREF="#DOC.30.9">getBall1</A></B>()
+<DD><I>Returns the ID of the first ball involved in the event.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="BallType.html">BallType</A> <B><A HREF="#DOC.30.10">getBall2</A></B>()
+<DD><I>Returns the ID of the other ball involved in the event.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizBall.html">fizBall</A> <B><A HREF="#DOC.30.11">getBall1Data</A></B>()
+<DD><I>Returns the first ball involved in the event.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizBall.html">fizBall</A> <B><A HREF="#DOC.30.12">getBall2Data</A></B>()
+<DD><I>Returns the other ball involved in the event.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="BoundaryId.html">BoundaryId</A> <B><A HREF="#DOC.30.13">getBoundary</A></B>()
+<DD><I>Returns the boundary (rail/pocket) involved in the event.</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Protected Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>Event* <B><A HREF="#DOC.30.14">_event</A></B>
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>The fizEvent captures information relevant to a single event such as a ball-ball collision,
+ball motion state transition, or ball-rail collision. 
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="fizEvent"></A>
+<A NAME="DOC.30.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> fizEvent()</B></TT>
+<DD>Constructor 
+<DL><DT><DD></DL><P>
+<A NAME="fizEvent"></A>
+<A NAME="DOC.30.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> fizEvent(Event e)</B></TT>
+<DD>Constructor 
+<DL><DT><DD></DL><P>
+<A NAME="fizEvent"></A>
+<A NAME="DOC.30.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> fizEvent( const <!1><A HREF="fizEvent.html#DOC.30.3">fizEvent</A> &amp;rhs )</B></TT>
+<DD>Copy constructor 
+<DL><DT><DD></DL><P>
+<A NAME="operator= "></A>
+<A NAME="DOC.30.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizEvent.html">fizEvent</A> operator= ( const <!1><A HREF="fizEvent.html">fizEvent</A> &amp;rhs )</B></TT>
+<DD>Assignment operator 
+<DL><DT><DD></DL><P>
+<A NAME="~fizEvent"></A>
+<A NAME="DOC.30.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~fizEvent()</B></TT>
+<DD>Destructor 
+<DL><DT><DD></DL><P>
+<A NAME="getTime"></A>
+<A NAME="DOC.30.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>double getTime()</B></TT>
+<DD>Returns the time (in seconds) at which the event occured.  
+By definitiion, every shot begins with a CUE_STRIKE (or possibly a MISCUE)
+event at t = 0. 
+<DL><DT><DD></DL><P>
+<A NAME="getType"></A>
+<A NAME="DOC.30.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="EventType.html">EventType</A> getType()</B></TT>
+<DD>Returns the type of event. 
+<DL><DT><DD></DL><P>
+<A NAME="getTypeString"></A>
+<A NAME="DOC.30.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>string getTypeString()</B></TT>
+<DD>Returns a string representing the type of event. 
+<DL><DT><DD></DL><P>
+<A NAME="getBall1"></A>
+<A NAME="DOC.30.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="BallType.html">BallType</A> getBall1()</B></TT>
+<DD>Returns the ID of the first ball involved in the event. 
+<DL><DT><DD></DL><P>
+<A NAME="getBall2"></A>
+<A NAME="DOC.30.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="BallType.html">BallType</A> getBall2()</B></TT>
+<DD>Returns the ID of the other ball involved in the event.  
+If the event only involves one ball, returns UNKNOWN_ID. 
+<DL><DT><DD></DL><P>
+<A NAME="getBall1Data"></A>
+<A NAME="DOC.30.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizBall.html">fizBall</A> getBall1Data()</B></TT>
+<DD>Returns the first ball involved in the event. 
+<DL><DT><DD></DL><P>
+<A NAME="getBall2Data"></A>
+<A NAME="DOC.30.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizBall.html">fizBall</A> getBall2Data()</B></TT>
+<DD>Returns the other ball involved in the event.  
+If the event only involves one ball, returns UNKNOWN_ID. 
+<DL><DT><DD></DL><P>
+<A NAME="getBoundary"></A>
+<A NAME="DOC.30.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="BoundaryId.html">BoundaryId</A> getBoundary()</B></TT>
+<DD>Returns the boundary (rail/pocket) involved in the event.  
+If the event does not involve a boundary, returns UNKNOWN_BOUNDARY. 
+<DL><DT><DD></DL><P>
+<A NAME="_event"></A>
+<A NAME="DOC.30.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>Event* _event</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Friends:</B><DD>  ostream &amp; operator&lt;&lt;(ostream &amp;out, <!1><A HREF="fizEvent.html">fizEvent</A> &amp;rhs)<BR><DT><B>Since:</B><DD>v2.0.0	
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

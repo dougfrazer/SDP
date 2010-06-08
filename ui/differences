@@ -1,0 +1,87 @@
+Index: subwin.cpp
+===================================================================
+--- subwin.cpp	(revision 310)
++++ subwin.cpp	(working copy)
+@@ -563,19 +563,35 @@
+ 				// this is the _______ button
+ 				break;
+ 			case 1:
+-				// this is the _______ button
++				// this is the get pic button
++				guiState = GETPICTURES;
++    			updateParams();
+ 				break;
+ 			case 2:
+-				// this is the _______ button
++				// this is the animate button
++				guiState = GUI_IDLE;
++    			animateButtonPressed = true;
+ 				break;
+ 			case 3:
+-				// this is the _______ button
++				// this is the suggest button
++				guiState = GUI_IDLE;
++				suggestButtonPressed = true;
++				
+ 				break;
+ 			case 4:
+-				// this is the _______ button
+-				
++				// this is the undo button
++				checkRules();
++				myState = prevState;
+ 				break;
++			case 5:
++				// this is the cue_tracking button
++				if(guiState == CUE_TRACK)
++					guiState = GUI_IDLE;
++				else if(guiState == GUI_IDLE)
++					guiState = CUE_TRACK;
+ 			
++				break;
++			
+ 		}
+ 	}
+ 	if(type == BATTERY){
+@@ -616,6 +632,7 @@
+ 		prevState = myState;
+ 		visState = IDLE;
+ 		loadNextShot();
++		myState = prevState;
+ 	}
+ 	if(animateButtonPressed)
+ 	{
+@@ -1649,8 +1666,13 @@
+ 		//newState.statePlayer = currPlayer;
+ 		prevState = myState;
+ 		//stateList.push_front(newState);
+-		guiState = CUE_TRACK;
+-		//guiState = GUI_IDLE;
++		if(myState.getBall(CUE).getState() == STATIONARY){
++			guiState = CUE_TRACK;
++		}
++		else{
++			guiState = GUI_IDLE;
++		}
++		
+ 		cue.Setup();
+ 	}
+ 
+@@ -1954,7 +1976,7 @@
+ 	glEnd();
+ 	
+ 	
+-	if(guiState == GUI_IDLE)
++	if(guiState != GETPICTURES)
+ 		glColor3f(0.2f, 0.6f, 0.0f);
+ 	else
+ 		glColor3f(1.0f, 0.1f, 0.1f);
+@@ -1983,7 +2005,7 @@
+ 	}
+ 	
+ 	emitString(str.c_str(), (1000+300)/2 - 60, window.getHeight() + (10+160)/2 - 10);
+-	if(guiState == GUI_IDLE)
++	if(guiState != GETPICTURES)
+ 	{
+ 		str = "It is OK to shoot";
+ 		emitString(str.c_str(), (1000+300)/2 - 60, window.getHeight() + (10+160)/2 + 10);

@@ -1,0 +1,76 @@
+----- NEW SHOT -----
+
+State:
+CUE : state= STATIONARY r=( 0.5 , 0.6 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+ONE : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+TWO : state= STATIONARY r=( 0.1 , 0.1 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+THREE : state= STATIONARY r=( 1 , 0.3 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+FOUR : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+FIVE : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+SIX : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+SEVEN : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+EIGHT : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+NINE : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+TEN : state= STATIONARY r=( 0.2 , 0.2 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+ELEVEN : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+TWELVE : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+THIRTEEN : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+FOURTEEN : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+FIFTEEN : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+
+
+Event log:
+
+t=0: CUE ball struck by cue stick
+   theta = 4 degrees
+   phi = -28.4233892365467 degrees
+   a = 0 mm
+   b = 0 mm
+   V = 1.600000020861626 m/s
+   params = 4 -28.4233892365467 0 0 1.600000020861626
+   CUE : state= SLIDING r=( 0.5 , 0.6 ) v=( 2.13524494813919 , -1.155649363353813 , 0 ) w=( -7.102225051689854 , -13.12248389784771 , 0 )
+
+t=0.2427398347411553: CUE ball collides with THREE ball
+   CUE : state= SLIDING r=( 0.9674738208876419 , 0.3469911712170639 ) v=( 0.719594254886772 , 0.4980861514294784 , 0 ) w=( 13.14330086563964 , 23.80750709488889 , 0.6498126678085924 )
+   THREE : state= SLIDING r=( 1 , 0.3 ) v=( 0.9968056774785574 , -1.427045843303302 , 0 ) w=( -0.4126587712236835 , -0.2856326573157031 , -0.6498126678085924 )
+
+t=0.2644816751098971: THREE ball transitions to SLIDING state
+   THREE : state= SLIDING r=( 1.021406853998583 , 0.2693535715665635 ) v=( 0.972379417759228 , -1.392074149638681 , 0 ) w=( 2.646981969338104 , 1.851397939301046 , 0 )
+
+t=0.3700937322269569: CUE ball transitions to ROLLING state
+   CUE : state= ROLLING r=( 1.05840204839227 , 0.3945295991270243 ) v=( 0.7083671864152515 , 0.2484701589537268 , 0 ) w=( -8.695368642300147 , 24.78975280543312 , 0.5326481553547286 )
+
+t=0.4350437281351239: THREE ball pocketed in SE_POCKET
+   THREE : state= POCKETED_SE r=( 1.170916248966498 , 0.05531527845039103 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+
+t=0.5590863607218145: CUE ball hits SE_RAIL
+   CUE : state= SLIDING r=( 1.190625 , 0.4409087347410852 ) v=( -0.414523236451696 , 0.2181001387974836 , 0 ) w=( -0.8480611987848102 , 2.417749993885657 , 0.03960941391821475 )
+
+t=0.6269417948882435: CUE ball transitions to SLIDING state
+   CUE : state= SLIDING r=( 1.166689896377402 , 0.4540273303799857 ) v=( -0.2909502135860045 , 0.1685629427981488 , 0 ) w=( -5.182024103363526 , -8.393538095851135 , 0 )
+
+t=0.6349595934852319: CUE ball transitions to ROLLING state
+   CUE : state= ROLLING r=( 1.16441565166238 , 0.4553553687540905 ) v=( -0.2763488243011306 , 0.1627096273568528 , 0 ) w=( -5.69412519184087 , -9.670999975542633 , 0 )
+
+t=3.903987008611567: CUE ball transitions to STATIONARY state
+   CUE : state= STATIONARY r=( 0.7127197102732161 , 0.7213064850213613 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+
+
+State:
+CUE : state= STATIONARY r=( 0.7127197102732161 , 0.7213064850213613 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+ONE : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+TWO : state= STATIONARY r=( 0.1 , 0.1 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+THREE : state= POCKETED_SE r=( 1.170916248966498 , 0.05531527845039103 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+FOUR : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+FIVE : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+SIX : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+SEVEN : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+EIGHT : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+NINE : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+TEN : state= STATIONARY r=( 0.2 , 0.2 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+ELEVEN : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+TWELVE : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+THIRTEEN : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+FOURTEEN : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+FIFTEEN : state= NOTINPLAY r=( 0 , 0 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+

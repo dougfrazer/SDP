@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  fizTableState</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">fizTableState</A></H2></H2><BLOCKQUOTE>The fizTableState contains a snapshot of all the balls at a given time.</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.26.1">fizTableState</A></B>()
+<DD><I>Default constructor </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.26.2">fizTableState</A></B>( <!1><A HREF="fizTable.html">fizTable</A>&amp; forTable )
+<DD><I>Constructs a table state for the given table.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.26.3">fizTableState</A></B>( <!1><A HREF="fizTable.html">fizTable</A>&amp; forTable, double ballRadius )
+<DD><I>Constructs a table state for the given table.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.26.4">fizTableState</A></B>( <!1><A HREF="fizTableState.html#DOC.26.4">fizTableState</A> &amp;rhs )
+<DD><I>Copy constructor </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizTableState.html">fizTableState</A> <B><A HREF="#DOC.26.5">operator= </A></B>( <!1><A HREF="fizTableState.html">fizTableState</A> &amp;rhs )
+<DD><I>Assignment operator </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   <B><A HREF="#DOC.26.6">~fizTableState</A></B>()
+<DD><I>Destructor </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.26.7">toFizGTableState</A></B>(<!1><A HREF="fizGTableState.html">fizGTableState</A>&amp; state)
+<DD><I>Populates the given fizGTableState with the ball state data from this fizTableState.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.26.8">getNumBalls</A></B>()
+<DD><I>Returns the number of balls.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizBall.html">fizBall</A> <B><A HREF="#DOC.26.9">getBall</A></B>(<!1><A HREF="BallType.html">BallType</A> num)
+<DD><I>Returns the specified ball.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.26.10">getBall</A></B>(<!1><A HREF="BallType.html">BallType</A> btype, int &amp;state, double &amp;<!1><A HREF="fizVector.html#DOC.22.1">x</A>, double &amp;<!1><A HREF="fizVector.html#DOC.22.2">y</A> )
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.26.11">setBall</A></B>(<!1><A HREF="BallType.html">BallType</A> num, <!1><A HREF="BallState.html">BallState</A> state, <!1><A HREF="fizPoint.html">fizPoint</A> r )
+<DD><I>Sets a ball to a certain position and state.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.26.12">setBall</A></B>(<!1><A HREF="BallType.html">BallType</A> btype, <!1><A HREF="BallState.html">BallState</A> state, double <!1><A HREF="fizVector.html#DOC.22.1">x</A>, double <!1><A HREF="fizVector.html#DOC.22.2">y</A> )
+<DD><I>Sets the state and position of the specified ball.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.26.13">randomize</A></B>()
+<DD><I>Randomizes the locations of all 16 balls on the table.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.26.14">rack8Ball</A></B>()
+<DD><I>Racks the balls for a game of 8 ball.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.26.15">rack9Ball</A></B>()
+<DD><I>Racks the balls for a game of 9 ball.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.26.16">dump</A></B>()
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>TableState* <B><A HREF="#DOC.26.17">getTableState</A></B>()
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>The fizTableState contains a snapshot of all the balls at a given time. </BLOCKQUOTE>
+<DL>
+
+<A NAME="fizTableState"></A>
+<A NAME="DOC.26.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> fizTableState()</B></TT>
+<DD>Default constructor 
+<DL><DT><DD></DL><P>
+<A NAME="fizTableState"></A>
+<A NAME="DOC.26.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> fizTableState( <!1><A HREF="fizTable.html">fizTable</A>&amp; forTable )</B></TT>
+<DD>Constructs a table state for the given table.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>forTable</B> -  the table
+<BR><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="fizTableState"></A>
+<A NAME="DOC.26.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> fizTableState( <!1><A HREF="fizTable.html">fizTable</A>&amp; forTable, double ballRadius )</B></TT>
+<DD>Constructs a table state for the given table.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>forTable</B> -  the table
+<BR><B>ballRadius</B> -  the radius of the ball in metres
+<BR><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="fizTableState"></A>
+<A NAME="DOC.26.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> fizTableState( <!1><A HREF="fizTableState.html#DOC.26.4">fizTableState</A> &amp;rhs )</B></TT>
+<DD>Copy constructor 
+<DL><DT><DD></DL><P>
+<A NAME="operator= "></A>
+<A NAME="DOC.26.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizTableState.html">fizTableState</A> operator= ( <!1><A HREF="fizTableState.html">fizTableState</A> &amp;rhs )</B></TT>
+<DD>Assignment operator 
+<DL><DT><DD></DL><P>
+<A NAME="~fizTableState"></A>
+<A NAME="DOC.26.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~fizTableState()</B></TT>
+<DD>Destructor 
+<DL><DT><DD></DL><P>
+<A NAME="toFizGTableState"></A>
+<A NAME="DOC.26.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void toFizGTableState(<!1><A HREF="fizGTableState.html">fizGTableState</A>&amp; state)</B></TT>
+<DD>Populates the given fizGTableState with the ball state data from this fizTableState.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>state</B> -  the <!1><A HREF="fizGTableState.html">fizGTableState</A> to populate <BR><DD></DL><P>
+<A NAME="getNumBalls"></A>
+<A NAME="DOC.26.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int getNumBalls()</B></TT>
+<DD>Returns the number of balls. 
+<DL><DT><DD></DL><P>
+<A NAME="getBall"></A>
+<A NAME="DOC.26.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizBall.html">fizBall</A> getBall(<!1><A HREF="BallType.html">BallType</A> num)</B></TT>
+<DD>Returns the specified ball. If num is invalid, simply returns the CUE ball. 
+
+<DL><DT><DT><B>Since:</B><DD>v2.0.0
+<DD></DL><P>
+<A NAME="getBall"></A>
+<A NAME="DOC.26.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void getBall(<!1><A HREF="BallType.html">BallType</A> btype, int &amp;state, double &amp;<!1><A HREF="fizVector.html#DOC.22.1">x</A>, double &amp;<!1><A HREF="fizVector.html#DOC.22.2">y</A> )</B></TT>
+<DD>DEPRECATED.  USE fizTableState::getBall(BallType num) INSTEAD.
+Returns the state and position of the specified ball.
+If num is greater than 16, simply returns the CUE ball.
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.0.0 
+<DD></DL><P>
+<A NAME="setBall"></A>
+<A NAME="DOC.26.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void setBall(<!1><A HREF="BallType.html">BallType</A> num, <!1><A HREF="BallState.html">BallState</A> state, <!1><A HREF="fizPoint.html">fizPoint</A> r )</B></TT>
+<DD>Sets a ball to a certain position and state. 
+
+<DL><DT><DT><B>Since:</B><DD>v2.0.0 
+<DD></DL><P>
+<A NAME="setBall"></A>
+<A NAME="DOC.26.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void setBall(<!1><A HREF="BallType.html">BallType</A> btype, <!1><A HREF="BallState.html">BallState</A> state, double <!1><A HREF="fizVector.html#DOC.22.1">x</A>, double <!1><A HREF="fizVector.html#DOC.22.2">y</A> )</B></TT>
+<DD>Sets the state and position of the specified ball.
+
+<DL><DT><DT><B>Since:</B><DD>v2.0.0 
+<DD></DL><P>
+<A NAME="randomize"></A>
+<A NAME="DOC.26.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void randomize()</B></TT>
+<DD>Randomizes the locations of all 16 balls on the table. 
+<DL><DT><DD></DL><P>
+<A NAME="rack8Ball"></A>
+<A NAME="DOC.26.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void rack8Ball()</B></TT>
+<DD>Racks the balls for a game of 8 ball. 
+<DL><DT><DD></DL><P>
+<A NAME="rack9Ball"></A>
+<A NAME="DOC.26.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void rack9Ball()</B></TT>
+<DD>Racks the balls for a game of 9 ball. 
+<DL><DT><DD></DL><P>
+<A NAME="dump"></A>
+<A NAME="DOC.26.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void dump()</B></TT>
+<DD>DEPRECATED. USE operator &lt;&lt; INSTEAD.
+Writes a text representation of the table state to the given output stream.
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.0.0; use operator &lt;&lt; instead. 
+<DD></DL><P>
+<A NAME="getTableState"></A>
+<A NAME="DOC.26.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>TableState* getTableState()</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Friends:</B><DD>  ostream &amp; operator&lt;&lt;(ostream &amp;out, <!1><A HREF="fizTableState.html">fizTableState</A> &amp;rhs)<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

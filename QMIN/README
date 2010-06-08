@@ -1,0 +1,85 @@
+Readme file for QMIN release 3.2.0 Friday January 25 2008
+
+
+About QMIN
+==========
+QMIN is a suite of programs that enable the development, testing, and competition of Eight Ball AI strategy programs. 
+
+This QMIN release includes the following components:
+- a client application used to connect to the QMIN Eight Ball game server (located in /client);
+- skeleton code for an AI, in which you can insert function calls to your pool strategy (in /ai/AI.h, /ai/AI.cpp);
+- a physics library called Poolfiz that is used for physics simulation of a pool shot (/poolfiz/bin/libpoolfiz.a);
+- a shot visualization program called shotViz used by the client to display shots your AI makes during a game (visualization/shotViz/ShotViz.cpp)
+- a program called DbToFile that you use to download matches from the QMIN database for viewing (visualization/DBToFile/DbToFile.jar)
+- a program called dbViz that you use to visualize a match that you have downloaded using DbToFile (visualization/dbViz/dbViz.cpp)
+
+
+Release Notes
+===================
+
+Release 3.2.0:
+
+The only changes from Release 3.1.1 is in DBToFile, which now points to the new server at 130.15.23.21. There have also been some optional command line arguments added to DBToFile to make it quicker to use when the database is large: 
+
+java -jar DBToFile.jar [matchnum] [gamenum]
+
+If the matchnum is included, and the gamenum is either 0 or excluded, then the entire match will be downloaded.
+
+--------------------------------------------------------------------------------
+Release 3.1.1: 
+
+Release 3.1.1 fixes two minor bugs to give more robust client-server communication.
+
+--------------------------------------------------------------------------------
+Release 3.1.0:
+
+Release 3.1.0 included several major new features:
+	- Client command line options allow you to set up a new table or join a player on a table
+	- Client command line options allow you to specify the noise parameters used for the noise model on the server
+	- To get help on new client command line options, run './Client', or './Client ?' from the '/client/' directory
+	- dbViz gives more info about the shot, including called ball and pocket
+--------------------------------------------------------------------------------
+
+Required libraries
+==================
+You need to have the freely-available GNU Scientific Library (GSL) installed in order to use many of the components of the QMIN system.  The GSL is not distributed with QMIN software releases.  Search in your Linux package manager for 'gsl' and download the development version of the library, or visit 'http://www.gnu.org/software/gsl/#downloading'.
+
+You need to have the freely-available GLUT libraries installed, which is also not included in QMIN releases.  Search in your Linux package manager for 'glut' and download the development version.  The 'freeglut' version of the GLUT libraries is known to work well with QMIN.
+
+Finally, you need the Java Runtime Environment. The latest version of the JRE can be downloaded from http://java.sun.com/j2se/1.5.0/download.jsp.
+
+
+How to install
+==============
+This release includes libraries built on Linux GCC 4.0.2.  You will need gcc compiler version 4.0.x in order to build and run the QMIN system.
+
+The master makefile (QMIN/Makefile) is used to install the QMIN system.  To install QMIN:
+
+1.  Ensure that you have the GSL and GLUT libraries installed.
+2.  Run the master makefile (QMIN/Makefile) by typing 'make install' in the QMIN directory to install the QMIN system.
+3.  If you get errors, chances are good that the GSL and/or GLUT libraries are not installed in the expected places.  Inspect the makefiles in the QMIN subdirectories (visualization/shotViz, visualization/dbViz, client/, ai/) to ensure that the GSL and GLUT library and include paths are set to the correct values.
+
+
+How to use the system
+=====================
+1.  Use the Poolfiz library to simulate shots in your strategy code, if desired.  The complete API (interface specification) for the Poolfiz library can be found in HTML form in 'poolfiz/docs/index.html', or in the header file in 'poolfiz/bin/poolfiz.h'.  The Poolfiz Readme is found in 'poolfiz/docs/readme' and is also a good resource, as are the examples, in 'poolfiz/examples'.  The main interface to the Poolfiz library is through the classes fizGTableState (the locations of all the balls on the table), fizGTable (the table itself), and fizGShot (simulates a shot).   
+
+2.  Use the skeleton code in 'ai/AI.h' and 'ai/AI.cpp' to interface your strategy code to the client application.  Insert function calls or source code at the indicated places in AI.cpp for your pool strategy.  Compile your AI into a library using the makefile for the AI (ai/Makefile) by typing 'make' within the /ai directory.
+
+3. Re-compile the client application and link it to your AI library using the makefile for the client (client/Makefile) by typing 'make' within the /client directory.
+
+
+How to play
+===========
+0.  Learn the client command line options by going to '/client/' and running './Client', or './Client ?'.  This will print out information about the command line options.
+
+1.  Log your client into the QMIN server by going to '/client/' and running the client application.   If you would like more explanation on the command line options for the client application, just run './Client' and it will give you help about the options.
+
+2.  After a match, you can download the history of the match from the QMIN server by running the dbToFile application.  This program downloads the match history from the database and stores the data locally in the form of text files, so you only have to run DBToFile once for each match you want to view.  Run DBToFile by going to '/visualization/dbViz/' and running 'java -jar DBToFile.jar'.
+
+3.  View your downloaded matches using the dbViz application.  Go to '/QMIN/visualization/dbViz' and run './dbViz -a <DIRECTORY NAME>' where DIRECTORY NAME is a directory of files produced by the DBToFile application.
+
+
+Help and support
+================
+Email michael.greenspan@queensu.ca

@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  fizShot</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">fizShot</A></H2></H2><BLOCKQUOTE>Executes a shot and stores an event list representing the outcome of the shot.</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.32.1">fizShot</A></B>()
+<DD><I>Constructor </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.32.2">fizShot</A></B>( const <!1><A HREF="fizShot.html#DOC.32.2">fizShot</A> &amp;rhs )
+<DD><I>Copy constructor.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizShot.html">fizShot</A> <B><A HREF="#DOC.32.3">operator= </A></B>( const <!1><A HREF="fizShot.html">fizShot</A> &amp;rhs )
+<DD><I>Assignment operator </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   <B><A HREF="#DOC.32.4">~fizShot</A></B>()
+<DD><I>Destructor </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="ShotStatus.html">ShotStatus</A> <B><A HREF="#DOC.32.5">execute</A></B>(<!1><A HREF="fizTable.html">fizTable</A>&amp; onTable, <!1><A HREF="fizTableState.html">fizTableState</A>&amp; state, double a, double b, double theta, double phi, double V, bool verbose = false)
+<DD><I>Executes a shot on the table.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>vector&lt;<!1><A HREF="fizEvent.html">fizEvent</A>&gt;  <B><A HREF="#DOC.32.6">getEventList</A></B>()
+<DD><I>Returns the time-sorted list of events that occured on the last shot, in the form of a  Standard Template Library vector (array) of fizEvent objects.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>bool <B><A HREF="#DOC.32.7">save</A></B>(string tag = "", bool autogen = true)
+<DD><I>Saves a text representation of the shot to the working directory.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>bool <B><A HREF="#DOC.32.8">load</A></B>(string fname, <!1><A HREF="fizTableState.html">fizTableState</A>&amp; state, double &amp;a, double &amp;b, double &amp;theta, double &amp;phi, double &amp;V)
+<DD><I>Loads a shot from the specified file.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.32.9">dump</A></B>()
+<DD><I>Dumps a text representation of the shot to standard output.</I>
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Executes a shot and stores an event list representing the outcome of the shot.
+You should only ever need one instance of a fizShot, but we have provided a 
+copy constructor and assignment operator. </BLOCKQUOTE>
+<DL>
+
+<A NAME="fizShot"></A>
+<A NAME="DOC.32.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> fizShot()</B></TT>
+<DD>Constructor 
+<DL><DT><DD></DL><P>
+<A NAME="fizShot"></A>
+<A NAME="DOC.32.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> fizShot( const <!1><A HREF="fizShot.html#DOC.32.2">fizShot</A> &amp;rhs )</B></TT>
+<DD>Copy constructor.
+
+<DL><DT><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="operator= "></A>
+<A NAME="DOC.32.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizShot.html">fizShot</A> operator= ( const <!1><A HREF="fizShot.html">fizShot</A> &amp;rhs )</B></TT>
+<DD>Assignment operator
+
+<DL><DT><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="~fizShot"></A>
+<A NAME="DOC.32.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~fizShot()</B></TT>
+<DD>Destructor 
+<DL><DT><DD></DL><P>
+<A NAME="execute"></A>
+<A NAME="DOC.32.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="ShotStatus.html">ShotStatus</A> execute(<!1><A HREF="fizTable.html">fizTable</A>&amp; onTable, <!1><A HREF="fizTableState.html">fizTableState</A>&amp; state, double a, double b, double theta, double phi, double V, bool verbose = false)</B></TT>
+<DD>Executes a shot on the table.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>tab</B> -  reference to the <!1><A HREF="fizTable.html">fizTable</A> on which to <!1><A HREF="fizShot.html#DOC.32.5">execute</A> the shot
+<BR><B>state</B> -  reference to the <!1><A HREF="fizTableState.html">fizTableState</A> with which to <!1><A HREF="fizShot.html#DOC.32.5">execute</A> the shot
+<BR><B>a</B> -  right/left english in mm
+<BR><B>b</B> -  top/bottom english in mm
+<BR><B>theta</B> -  cue stick elevation in degrees
+<BR><B>phi</B> -  cue stick azimuth angle (heading) in degrees
+<BR><B>V</B> -  pre-impact cue stick velocity in m/s (max. 4.5 m/s)
+<BR><B>verbose</B> -  set to true for console output of shot data (optional, default = false) <BR><DD></DL><P>
+<A NAME="getEventList"></A>
+<A NAME="DOC.32.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>vector&lt;<!1><A HREF="fizEvent.html">fizEvent</A>&gt;  getEventList()</B></TT>
+<DD>Returns the time-sorted list of events that occured on the last shot, in the form of a 
+Standard Template Library vector (array) of fizEvent objects. 
+<DL><DT><DD></DL><P>
+<A NAME="save"></A>
+<A NAME="DOC.32.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool save(string tag = "", bool autogen = true)</B></TT>
+<DD>Saves a text representation of the shot to the working directory.
+If autogen is not supplied or is supplied and is true, the filename is automatically generated and contains
+the optional string tag. Otherwise if autogen is false the string tag itself is used for the filename. 
+<DL><DT><DD></DL><P>
+<A NAME="load"></A>
+<A NAME="DOC.32.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool load(string fname, <!1><A HREF="fizTableState.html">fizTableState</A>&amp; state, double &amp;a, double &amp;b, double &amp;theta, double &amp;phi, double &amp;V)</B></TT>
+<DD>Loads a shot from the specified file. 
+
+<DL><DT><DT><B>Parameters:</B><DD><B>fname</B> -  the filename, including extension, of the shot to <!1><A HREF="fizShot.html#DOC.32.8">load</A>
+<BR><B>state</B> -  reference to the initial table state to be populated from the file
+<BR><B>a</B> -  reference to the right/left english to be populated from the file
+<BR><B>b</B> -  reference to the top/bottom english to be populated from the file
+<BR><B>theta</B> -  reference to the cue stick elevation to be populated from the file
+<BR><B>phi</B> -  reference to the cue stick azimuth angle (heading) to be populated from the file
+<BR><B>V</B> -  reference to the pre-impact cue stick velocity to be populated from the file <BR><DD></DL><P>
+<A NAME="dump"></A>
+<A NAME="DOC.32.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void dump()</B></TT>
+<DD>Dumps a text representation of the shot to standard output.
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>Use operator &lt;&lt; instead! 
+<DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Friends:</B><DD>  ostream &amp; operator&lt;&lt;(ostream&amp; out, <!1><A HREF="fizShot.html">fizShot</A>&amp; rhs)<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

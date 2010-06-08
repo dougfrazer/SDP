@@ -1,0 +1,669 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  fizGTable</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">fizGTable</A></H2></H2><BLOCKQUOTE>A billiard table for use with graphical output.</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.36.1">fizGTable</A></B>()
+<DD><I>Constructs a table with the default parameters </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.36.2">fizGTable</A></B>( bool <!1><A HREF="fizGTable.html#DOC.36.17">onRobot</A> )
+<DD><I>Constructs a table with the given parameters and automatically sets the pockets.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.36.3">fizGTable</A></B>( double length, double width, double cornerPocketWidth, double sidePocketWidth, double muS, double muR, double muSp, double railHeight, double cueLength, double railVelDamping, double railSpinDamping, double railZSpinAngleAdj, double railVelAngleAdj, bool <!1><A HREF="fizGTable.html#DOC.36.17">onRobot</A> = false )
+<DD><I>Constructs a table with the given parameters and automatically sets the pockets.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.36.4">fizGTable</A></B>( const <!1><A HREF="fizGTable.html#DOC.36.4">fizGTable</A> &amp;rhs )
+<DD><I>Copy constructor.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizGTable.html">fizGTable</A> <B><A HREF="#DOC.36.5">operator= </A></B>( const <!1><A HREF="fizGTable.html">fizGTable</A> &amp;rhs )
+<DD><I>Assignment operator </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   <B><A HREF="#DOC.36.6">~fizGTable</A></B>()
+<DD><I>Destructor </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.36.7">draw</A></B>(<!1><A HREF="fizGWindow.html">fizGWindow</A>&amp; win)
+<DD><I>Draws the table on the given graphics window </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.36.8">isValidBallPlacement</A></B>( <!1><A HREF="fizGTableState.html">fizGTableState</A>&amp; state )
+<DD><I>Returns BAD_X_VAL or BAD_Y_VAL if any ball that is in play is off the table or BALL_OVERLAP if any ball is overlapping with another ball.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.36.9">isPhysicallyPossible</A></B>(<!1><A HREF="fizGTableState.html">fizGTableState</A>&amp; state, double a, double b, double theta, double phi, double V)
+<DD><I>Checks physical validity of the given shot parameters and table state.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.10">getTopLeftCorner</A></B>(<!1><A HREF="fizGWindow.html">fizGWindow</A>&amp; win)
+<DD><I>Returns the (x,y) OpenGL pixel coordinates of the top left corner of the table.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.11">getBottomRightCorner</A></B>(<!1><A HREF="fizGWindow.html">fizGWindow</A>&amp; win)
+<DD><I>Returns the (x,y) OpenGL pixel coordinates of the bottom right corner of the table.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>double <B><A HREF="#DOC.36.12">getLength</A></B>()
+<DD><I>Returns the length of the table (in metres).</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>double <B><A HREF="#DOC.36.13">getWidth</A></B>()
+<DD><I>Returns the width of the table (in metres).</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>double <B><A HREF="#DOC.36.14">getHeadString</A></B>()
+<DD><I>Returns the y-coordinate of the headstring of the table (in metres) </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.15">getFootSpot</A></B>()
+<DD><I>Returns the x-y coordinate of the footspot of the table (in metres) </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.36.16">playingOnRobot</A></B>(bool <!1><A HREF="fizGTable.html#DOC.36.17">onRobot</A>)
+<DD><I>Sets the onRobot flag to tell the table if the game is being played on the robot.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>bool <B><A HREF="#DOC.36.17">onRobot</A></B>()
+<DD><I>Returns true if the game is being played on the robot.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.36.18">setCueLength</A></B>(double length)
+<DD><I>Sets the length of the cue stick.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>double <B><A HREF="#DOC.36.19">getCueLength</A></B>()
+<DD><I>Returns the length of the cue stick.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.36.20">setRailHeight</A></B>(double height)
+<DD><I>Sets the height of the rails around the table.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>double <B><A HREF="#DOC.36.21">getRailHeight</A></B>()
+<DD><I>Returns the height of the rails around the table.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.36.22">setMuSliding</A></B>(double mu)
+<DD><I>Sets the coefficient of sliding friction.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>double <B><A HREF="#DOC.36.23">getMuSliding</A></B>()
+<DD><I>Returns the coefficient of sliding friction.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.36.24">setMuRolling</A></B>(double mu)
+<DD><I>Sets the coefficient of rolling friction.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>double <B><A HREF="#DOC.36.25">getMuRolling</A></B>()
+<DD><I>Returns the coefficient of rolling friction.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.36.26">setMuSpinning</A></B>(double mu)
+<DD><I>Sets the coefficient of spinning friction.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>double <B><A HREF="#DOC.36.27">getMuSpinning</A></B>()
+<DD><I>Returns the coefficient of spinning friction.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.28">getPocketCenter</A></B>(<!1><A HREF="BoundaryId.html">BoundaryId</A> pocket)
+<DD><I>Returns the center coordinates (aiming points) of the given pocket (in metres).</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.29">getPocketRight</A></B>(<!1><A HREF="BoundaryId.html">BoundaryId</A> pocket)
+<DD><I>Returns the right corner coordinates of the given pocket (in metres), looking  at the pocket from the center of the table.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.30">getPocketLeft</A></B>(<!1><A HREF="BoundaryId.html">BoundaryId</A> pocket)
+<DD><I>Returns the left corner coordinates of the given pocket (in metres), looking  at the pocket from the center of the table.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.31">getSWpocket</A></B>()
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.32">getSWpocketLeft</A></B>()
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.33">getSWpocketRight</A></B>()
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.34">getWpocket</A></B>()
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.35">getWpocketLeft</A></B>()
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.36">getWpocketRight</A></B>()
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.37">getNWpocket</A></B>()
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.38">getNWpocketLeft</A></B>()
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.39">getNWpocketRight</A></B>()
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.40">getNEpocket</A></B>()
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.41">getNEpocketLeft</A></B>()
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.42">getNEpocketRight</A></B>()
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.43">getEpocket</A></B>()
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.44">getEpocketLeft</A></B>()
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.45">getEpocketRight</A></B>()
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.46">getSEpocket</A></B>()
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.47">getSEpocketLeft</A></B>()
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizPoint.html">fizPoint</A> <B><A HREF="#DOC.36.48">getSEpocketRight</A></B>()
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.36.49">getSWpocket</A></B>( double &amp;<!1><A HREF="fizVector.html#DOC.22.1">x</A>, double &amp;<!1><A HREF="fizVector.html#DOC.22.2">y</A> )
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.36.50">getWpocket</A></B>( double &amp;<!1><A HREF="fizVector.html#DOC.22.1">x</A>, double &amp;<!1><A HREF="fizVector.html#DOC.22.2">y</A> )
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.36.51">getNWpocket</A></B>( double &amp;<!1><A HREF="fizVector.html#DOC.22.1">x</A>, double &amp;<!1><A HREF="fizVector.html#DOC.22.2">y</A> )
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.36.52">getNEpocket</A></B>( double &amp;<!1><A HREF="fizVector.html#DOC.22.1">x</A>, double &amp;<!1><A HREF="fizVector.html#DOC.22.2">y</A> )
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.36.53">getEpocket</A></B>( double &amp;<!1><A HREF="fizVector.html#DOC.22.1">x</A>, double &amp;<!1><A HREF="fizVector.html#DOC.22.2">y</A> )
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.36.54">getSEpocket</A></B>( double &amp;<!1><A HREF="fizVector.html#DOC.22.1">x</A>, double &amp;<!1><A HREF="fizVector.html#DOC.22.2">y</A> )
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>GTable* <B><A HREF="#DOC.36.55">getTable</A></B>()
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>A billiard table for use with graphical output. You should only ever need one instance of a fizGTable,
+but we have provided a copy constructor or assignment operator.
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="fizGTable"></A>
+<A NAME="DOC.36.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> fizGTable()</B></TT>
+<DD>Constructs a table with the default parameters 
+<DL><DT><DD></DL><P>
+<A NAME="fizGTable"></A>
+<A NAME="DOC.36.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> fizGTable( bool <!1><A HREF="fizGTable.html#DOC.36.17">onRobot</A> )</B></TT>
+<DD>Constructs a table with the given parameters and automatically sets the pockets.
+
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - <!1><A HREF="fizGTable.html#DOC.36.17">onRobot</A> indicates whether the game is being played on the robotic table <BR><DT><B>Since:</B><DD>v2.5.0
+
+<DD></DL><P>
+<A NAME="fizGTable"></A>
+<A NAME="DOC.36.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> fizGTable( double length, double width, double cornerPocketWidth, double sidePocketWidth, double muS, double muR, double muSp, double railHeight, double cueLength, double railVelDamping, double railSpinDamping, double railZSpinAngleAdj, double railVelAngleAdj, bool <!1><A HREF="fizGTable.html#DOC.36.17">onRobot</A> = false )</B></TT>
+<DD>Constructs a table with the given parameters and automatically sets the pockets.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>length</B> -   the length of the table in metres
+<BR><B>width</B> -  the width of the table in metres
+<BR><B>cornerPocketWidth</B> -  the width of corner pockets (horn to horn) in metres 
+<BR><B>sidePocketWidth</B> -  the width of the side pockets (horn to horn) in metres
+<BR><B>muS</B> -  the coefficient of sliding friction (dimensionless)
+<BR><B>muR</B> -  the coefficient of rolling friction (dimensionless)
+<BR><B>muSp</B> -  the coefficient of spinning friction (dimensionless)
+<BR><B>railHeight</B> -  the height of the top of the rail above the table in metres
+<BR><B>cueLength</B> -  the length of the cue in metres 
+<BR><B>railVelDamping</B> -  velocity damping factor of the banks
+<BR><B>railSpinDamping</B> -  spin damping factor of the banks
+<BR><B>railZSpinAngleAdj</B> -  <!1><A HREF="fizVector.html#DOC.22.3">z</A>-spin angle of deflection factor of the banks
+<BR><B>double</B> -  railVelAngleAdj velocity deflection factor of the banks
+<BR><B></B> - <!1><A HREF="fizGTable.html#DOC.36.17">onRobot</A> indicates whether the game is being played on the robotic table (optional, default = false) <BR><DT><B>Since:</B><DD>v2.5.0
+
+<DD></DL><P>
+<A NAME="fizGTable"></A>
+<A NAME="DOC.36.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> fizGTable( const <!1><A HREF="fizGTable.html#DOC.36.4">fizGTable</A> &amp;rhs )</B></TT>
+<DD>Copy constructor.
+
+<DL><DT><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="operator= "></A>
+<A NAME="DOC.36.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizGTable.html">fizGTable</A> operator= ( const <!1><A HREF="fizGTable.html">fizGTable</A> &amp;rhs )</B></TT>
+<DD>Assignment operator
+
+<DL><DT><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="~fizGTable"></A>
+<A NAME="DOC.36.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~fizGTable()</B></TT>
+<DD>Destructor 
+<DL><DT><DD></DL><P>
+<A NAME="draw"></A>
+<A NAME="DOC.36.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void draw(<!1><A HREF="fizGWindow.html">fizGWindow</A>&amp; win)</B></TT>
+<DD>Draws the table on the given graphics window 
+<DL><DT><DD></DL><P>
+<A NAME="isValidBallPlacement"></A>
+<A NAME="DOC.36.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int isValidBallPlacement( <!1><A HREF="fizGTableState.html">fizGTableState</A>&amp; state )</B></TT>
+<DD>Returns BAD_X_VAL or BAD_Y_VAL if any ball that is in play is off the table or
+BALL_OVERLAP if any ball is overlapping with another ball.  Used to check cue ball 
+placement validity in the case of Ball In Hand, for example.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>state</B> -  the table state to check
+<BR><DT><B>Since:</B><DD>v2.2.0 
+<DD></DL><P>
+<A NAME="isPhysicallyPossible"></A>
+<A NAME="DOC.36.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int isPhysicallyPossible(<!1><A HREF="fizGTableState.html">fizGTableState</A>&amp; state, double a, double b, double theta, double phi, double V)</B></TT>
+<DD>Checks physical validity of the given shot parameters and table state.  Used before calling
+fizShot::execute() to double-check that an error condition will not result due to invalid
+parameters.
+
+<DL><DT><DT><B>Since:</B><DD>v2.2.0 
+<DD></DL><P>
+<A NAME="getTopLeftCorner"></A>
+<A NAME="DOC.36.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getTopLeftCorner(<!1><A HREF="fizGWindow.html">fizGWindow</A>&amp; win)</B></TT>
+<DD>Returns the (x,y) OpenGL pixel coordinates of the top left corner of the table.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>win</B> -  reference to the graphics window
+<BR><DT><B>Since:</B><DD>v2.0.0 
+<DD></DL><P>
+<A NAME="getBottomRightCorner"></A>
+<A NAME="DOC.36.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getBottomRightCorner(<!1><A HREF="fizGWindow.html">fizGWindow</A>&amp; win)</B></TT>
+<DD>Returns the (x,y) OpenGL pixel coordinates of the bottom right corner of the table.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>win</B> -  reference to the graphics window
+<BR><DT><B>Since:</B><DD>v2.0.0 
+<DD></DL><P>
+<A NAME="getLength"></A>
+<A NAME="DOC.36.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>double getLength()</B></TT>
+<DD>Returns the length of the table (in metres). 
+<DL><DT><DD></DL><P>
+<A NAME="getWidth"></A>
+<A NAME="DOC.36.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>double getWidth()</B></TT>
+<DD>Returns the width of the table (in metres). 
+<DL><DT><DD></DL><P>
+<A NAME="getHeadString"></A>
+<A NAME="DOC.36.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>double getHeadString()</B></TT>
+<DD>Returns the y-coordinate of the headstring of the table (in metres) 
+<DL><DT><DD></DL><P>
+<A NAME="getFootSpot"></A>
+<A NAME="DOC.36.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getFootSpot()</B></TT>
+<DD>Returns the x-y coordinate of the footspot of the table (in metres) 
+<DL><DT><DD></DL><P>
+<A NAME="playingOnRobot"></A>
+<A NAME="DOC.36.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void playingOnRobot(bool <!1><A HREF="fizGTable.html#DOC.36.17">onRobot</A>)</B></TT>
+<DD>Sets the onRobot flag to tell the table if the game is being played on the robot. 
+
+<DL><DT><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="onRobot"></A>
+<A NAME="DOC.36.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool onRobot()</B></TT>
+<DD>Returns true if the game is being played on the robot. 
+
+<DL><DT><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="setCueLength"></A>
+<A NAME="DOC.36.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void setCueLength(double length)</B></TT>
+<DD>Sets the length of the cue stick. 
+
+<DL><DT><DT><B>Parameters:</B><DD><B>length</B> -  the length of the cue in metres.
+<BR><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="getCueLength"></A>
+<A NAME="DOC.36.19"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>double getCueLength()</B></TT>
+<DD>Returns the length of the cue stick. 
+
+<DL><DT><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="setRailHeight"></A>
+<A NAME="DOC.36.20"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void setRailHeight(double height)</B></TT>
+<DD>Sets the height of the rails around the table.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>height</B> -  the height of the rails in metres. 
+<BR><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="getRailHeight"></A>
+<A NAME="DOC.36.21"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>double getRailHeight()</B></TT>
+<DD>Returns the height of the rails around the table.
+
+<DL><DT><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="setMuSliding"></A>
+<A NAME="DOC.36.22"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void setMuSliding(double mu)</B></TT>
+<DD>Sets the coefficient of sliding friction.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>mu</B> -  the coefficient of sliding friction (between 0 and 1). 
+<BR><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="getMuSliding"></A>
+<A NAME="DOC.36.23"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>double getMuSliding()</B></TT>
+<DD>Returns the coefficient of sliding friction.
+
+<DL><DT><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="setMuRolling"></A>
+<A NAME="DOC.36.24"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void setMuRolling(double mu)</B></TT>
+<DD>Sets the coefficient of rolling friction.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>mu</B> -  the coefficient of rolling friction (between 0 and 1). 
+<BR><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="getMuRolling"></A>
+<A NAME="DOC.36.25"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>double getMuRolling()</B></TT>
+<DD>Returns the coefficient of rolling friction.
+
+<DL><DT><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="setMuSpinning"></A>
+<A NAME="DOC.36.26"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void setMuSpinning(double mu)</B></TT>
+<DD>Sets the coefficient of spinning friction.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>mu</B> -  the coefficient of spinning friction (between 0 and 1). 
+<BR><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="getMuSpinning"></A>
+<A NAME="DOC.36.27"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>double getMuSpinning()</B></TT>
+<DD>Returns the coefficient of spinning friction.
+
+<DL><DT><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="getPocketCenter"></A>
+<A NAME="DOC.36.28"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getPocketCenter(<!1><A HREF="BoundaryId.html">BoundaryId</A> pocket)</B></TT>
+<DD>Returns the center coordinates (aiming points) of the given pocket (in metres).
+
+<DL><DT><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="getPocketRight"></A>
+<A NAME="DOC.36.29"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getPocketRight(<!1><A HREF="BoundaryId.html">BoundaryId</A> pocket)</B></TT>
+<DD>Returns the right corner coordinates of the given pocket (in metres), looking 
+at the pocket from the center of the table.
+
+<DL><DT><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="getPocketLeft"></A>
+<A NAME="DOC.36.30"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getPocketLeft(<!1><A HREF="BoundaryId.html">BoundaryId</A> pocket)</B></TT>
+<DD>Returns the left corner coordinates of the given pocket (in metres), looking 
+at the pocket from the center of the table.
+
+<DL><DT><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="getSWpocket"></A>
+<A NAME="DOC.36.31"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getSWpocket()</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketCenter(BoundaryId pocket) etc INSTEAD.
+Returns the center coordinates (aiming points) of the given pocket (in metres).
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.5.0 
+<DT><B>Since:</B><DD>v2.0.0
+
+<DD></DL><P>
+<A NAME="getSWpocketLeft"></A>
+<A NAME="DOC.36.32"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getSWpocketLeft()</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketLeft(BoundaryId pocket) etc INSTEAD.
+Returns the left corner coordinates of the given pocket (in metres), looking 
+at the pocket from the center of the table.
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.5.0 
+<DT><B>Since:</B><DD>v2.0.2
+
+<DD></DL><P>
+<A NAME="getSWpocketRight"></A>
+<A NAME="DOC.36.33"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getSWpocketRight()</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketRight(BoundaryId pocket) etc INSTEAD.
+Returns the right corner coordinates of the given pocket (in metres), looking 
+at the pocket from the center of the table.
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.5.0 
+<DT><B>Since:</B><DD>v2.0.2
+
+<DD></DL><P>
+<A NAME="getWpocket"></A>
+<A NAME="DOC.36.34"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getWpocket()</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketCenter(BoundaryId pocket) etc INSTEAD.
+Returns the center coordinates (aiming points) of the given pocket (in metres).
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.5.0 
+<DT><B>Since:</B><DD>v2.0.0
+
+<DD></DL><P>
+<A NAME="getWpocketLeft"></A>
+<A NAME="DOC.36.35"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getWpocketLeft()</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketLeft(BoundaryId pocket) etc INSTEAD.
+Returns the left corner coordinates of the given pocket (in metres), looking 
+at the pocket from the center of the table.
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.5.0 
+<DT><B>Since:</B><DD>v2.0.2
+
+<DD></DL><P>
+<A NAME="getWpocketRight"></A>
+<A NAME="DOC.36.36"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getWpocketRight()</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketRight(BoundaryId pocket) etc INSTEAD.
+Returns the right corner coordinates of the given pocket (in metres), looking 
+at the pocket from the center of the table.
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.5.0 
+<DT><B>Since:</B><DD>v2.0.2
+
+<DD></DL><P>
+<A NAME="getNWpocket"></A>
+<A NAME="DOC.36.37"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getNWpocket()</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketCenter(BoundaryId pocket) etc INSTEAD.
+Returns the center coordinates (aiming points) of the given pocket (in metres).
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.5.0 
+<DT><B>Since:</B><DD>v2.0.0
+
+<DD></DL><P>
+<A NAME="getNWpocketLeft"></A>
+<A NAME="DOC.36.38"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getNWpocketLeft()</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketLeft(BoundaryId pocket) etc INSTEAD.
+Returns the left corner coordinates of the given pocket (in metres), looking 
+at the pocket from the center of the table.
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.5.0 
+<DT><B>Since:</B><DD>v2.0.2
+
+<DD></DL><P>
+<A NAME="getNWpocketRight"></A>
+<A NAME="DOC.36.39"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getNWpocketRight()</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketRight(BoundaryId pocket) etc INSTEAD.
+Returns the right corner coordinates of the given pocket (in metres), looking 
+at the pocket from the center of the table.
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.5.0 
+<DT><B>Since:</B><DD>v2.0.2
+
+<DD></DL><P>
+<A NAME="getNEpocket"></A>
+<A NAME="DOC.36.40"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getNEpocket()</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketCenter(BoundaryId pocket) etc INSTEAD.
+Returns the center coordinates (aiming points) of the given pocket (in metres).
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.5.0 
+<DT><B>Since:</B><DD>v2.0.0
+
+<DD></DL><P>
+<A NAME="getNEpocketLeft"></A>
+<A NAME="DOC.36.41"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getNEpocketLeft()</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketLeft(BoundaryId pocket) etc INSTEAD.
+Returns the left corner coordinates of the given pocket (in metres), looking 
+at the pocket from the center of the table.
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.5.0 
+<DT><B>Since:</B><DD>v2.0.2
+
+<DD></DL><P>
+<A NAME="getNEpocketRight"></A>
+<A NAME="DOC.36.42"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getNEpocketRight()</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketRight(BoundaryId pocket) etc INSTEAD.
+Returns the right corner coordinates of the given pocket (in metres), looking 
+at the pocket from the center of the table.
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.5.0 
+<DT><B>Since:</B><DD>v2.0.2
+
+<DD></DL><P>
+<A NAME="getEpocket"></A>
+<A NAME="DOC.36.43"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getEpocket()</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketCenter(BoundaryId pocket) etc INSTEAD.
+Returns the center coordinates (aiming points) of the given pocket (in metres).
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.5.0 
+<DT><B>Since:</B><DD>v2.0.0
+
+<DD></DL><P>
+<A NAME="getEpocketLeft"></A>
+<A NAME="DOC.36.44"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getEpocketLeft()</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketLeft(BoundaryId pocket) etc INSTEAD.
+Returns the left corner coordinates of the given pocket (in metres), looking 
+at the pocket from the center of the table.
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.5.0 
+<DT><B>Since:</B><DD>v2.0.2
+
+<DD></DL><P>
+<A NAME="getEpocketRight"></A>
+<A NAME="DOC.36.45"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getEpocketRight()</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketRight(BoundaryId pocket) etc INSTEAD.
+Returns the right corner coordinates of the given pocket (in metres), looking 
+at the pocket from the center of the table.
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.5.0 
+<DT><B>Since:</B><DD>v2.0.2
+
+<DD></DL><P>
+<A NAME="getSEpocket"></A>
+<A NAME="DOC.36.46"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getSEpocket()</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketCenter(BoundaryId pocket) etc INSTEAD.
+Returns the center coordinates (aiming points) of the given pocket (in metres).
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.5.0 
+<DT><B>Since:</B><DD>v2.0.0
+
+<DD></DL><P>
+<A NAME="getSEpocketLeft"></A>
+<A NAME="DOC.36.47"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getSEpocketLeft()</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketLeft(BoundaryId pocket) etc INSTEAD.
+Returns the left corner coordinates of the given pocket (in metres), looking 
+at the pocket from the center of the table.
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.5.0 
+<DT><B>Since:</B><DD>v2.0.2
+
+<DD></DL><P>
+<A NAME="getSEpocketRight"></A>
+<A NAME="DOC.36.48"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizPoint.html">fizPoint</A> getSEpocketRight()</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketRight(BoundaryId pocket) etc INSTEAD.
+Returns the right corner coordinates of the given pocket (in metres), looking 
+at the pocket from the center of the table.
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.5.0 
+<DT><B>Since:</B><DD>v2.0.2
+
+<DD></DL><P>
+<A NAME="getSWpocket"></A>
+<A NAME="DOC.36.49"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void getSWpocket( double &amp;<!1><A HREF="fizVector.html#DOC.22.1">x</A>, double &amp;<!1><A HREF="fizVector.html#DOC.22.2">y</A> )</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketCenter(BoundaryId pocket) etc INSTEAD.
+Returns the center coordinates (aiming points) of the given pocket (in metres).
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.0.0; added to v2.0.1 for backwards compatibility to v1.x 
+<DD></DL><P>
+<A NAME="getWpocket"></A>
+<A NAME="DOC.36.50"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void getWpocket( double &amp;<!1><A HREF="fizVector.html#DOC.22.1">x</A>, double &amp;<!1><A HREF="fizVector.html#DOC.22.2">y</A> )</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketCenter(BoundaryId pocket) etc INSTEAD.
+Returns the center coordinates (aiming points) of the given pocket (in metres).
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.0.0; added to v2.0.1 for backwards compatibility to v1.x 
+<DD></DL><P>
+<A NAME="getNWpocket"></A>
+<A NAME="DOC.36.51"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void getNWpocket( double &amp;<!1><A HREF="fizVector.html#DOC.22.1">x</A>, double &amp;<!1><A HREF="fizVector.html#DOC.22.2">y</A> )</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketCenter(BoundaryId pocket) etc INSTEAD.
+Returns the center coordinates (aiming points) of the given pocket (in metres).
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.0.0; added to v2.0.1 for backwards compatibility to v1.x 
+<DD></DL><P>
+<A NAME="getNEpocket"></A>
+<A NAME="DOC.36.52"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void getNEpocket( double &amp;<!1><A HREF="fizVector.html#DOC.22.1">x</A>, double &amp;<!1><A HREF="fizVector.html#DOC.22.2">y</A> )</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketCenter(BoundaryId pocket) etc INSTEAD.
+Returns the center coordinates (aiming points) of the given pocket (in metres).
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.0.0; added to v2.0.1 for backwards compatibility to v1.x 
+<DD></DL><P>
+<A NAME="getEpocket"></A>
+<A NAME="DOC.36.53"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void getEpocket( double &amp;<!1><A HREF="fizVector.html#DOC.22.1">x</A>, double &amp;<!1><A HREF="fizVector.html#DOC.22.2">y</A> )</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketCenter(BoundaryId pocket) etc INSTEAD.
+Returns the center coordinates (aiming points) of the given pocket (in metres).
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.0.0; added to v2.0.1 for backwards compatibility to v1.x 
+<DD></DL><P>
+<A NAME="getSEpocket"></A>
+<A NAME="DOC.36.54"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void getSEpocket( double &amp;<!1><A HREF="fizVector.html#DOC.22.1">x</A>, double &amp;<!1><A HREF="fizVector.html#DOC.22.2">y</A> )</B></TT>
+<DD>DEPRECATED.  USE fizGTable::getPocketCenter(BoundaryId pocket) etc INSTEAD.
+Returns the center coordinates (aiming points) of the given pocket (in metres).
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.0.0; added to v2.0.1 for backwards compatibility to v1.x 
+<DD></DL><P>
+<A NAME="getTable"></A>
+<A NAME="DOC.36.55"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>GTable* getTable()</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Friends:</B><DD>  class <!1><A HREF="fizGWindow.html">fizGWindow</A><BR><DT><B>See Also:</B><DD><!1><A HREF="fizGWindow.html">fizGWindow</A>
+<BR><!1><A HREF="fizGTableState.html">fizGTableState</A>
+<BR><!1><A HREF="fizGShot.html">fizGShot</A> <BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

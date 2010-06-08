@@ -1,0 +1,54 @@
+GLUT_INCPATH = /usr/include/GL
+GLUT_LIBPATH = /usr/bin
+X_INCPATH = /usr/X11R6/include/X11
+X_LIBPATH = /usr/X11R6/lib
+GSL_INCPATH = /usr/include/gsl
+GSL_LIBPATH = /usr/lib
+POOLFIZPATH = ../../bin/
+
+OBJECTS = main.o
+
+CC = g++
+
+# OPTIMIZE = -O3 -finline-functions -ffast-math
+# OPTIMIZE = -O2 -finline-functions -ffast-math
+OPTIMIZE = -O1 -finline-functions -ffast-math
+# OPTIMIZE = -g
+
+USERFLAGS = -Wall -Wno-sign-compare -Wno-deprecated $(CFLAGS)
+CFLAGS= -I$(GLUT_INCPATH) -I$(X_INCPATH) -I$(GSL_INCPATH) -I$(POOLFIZPATH)
+LDFLAGS = $(OPTIMIZE) 
+
+LIBES = -lm -lc \
+	-L$(GSL_LIBPATH) -lgsl -lgslcblas \
+	-L$(POOLFIZPATH) -lpoolfiz \
+	-L$(GLUT_LIBPATH) -lglut -lGLU -lGL \
+	-L$(X_LIBPATH) -lXmu -lX11 -lXt -lXext -lXi
+	
+TARGET = app
+
+all : $(TARGET)
+$(TARGET) : $(INCLUDES) $(OBJECTS)
+	$(CC) $(OPTIMIZE) $(USERFLAGS) $(OBJECTS) $(LDFLAGS) $(LIBES) -o $@ 
+
+.c~.o: 
+	($(CC) $(CFLAGS) -c $*.c)
+
+.cpp~.o: 
+	($(CC) $(CFLAGS) -c $*.cpp)
+
+.cpp.o:	
+	($(CC) $(CFLAGS) -c $(<F))
+
+.C.o:	
+	($(CC) $(CFLAGS) -c $(<F))
+
+OBJECTS: $(INCLUDES)
+
+hclean:
+	-rm -f $(INCLUDES)	
+clean:
+	-rm -f $(OBJECTS)
+empty:
+	-rm -f $(OBJECTS) $(TARGET)
+

@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  fizGShot</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">fizGShot</A></H2></H2><BLOCKQUOTE>Executes a shot and stores an event list representing the outcome of the shot.</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.40.1">fizGShot</A></B>()
+<DD><I>Constructor </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   <B><A HREF="#DOC.40.2">~fizGShot</A></B>()
+<DD><I>Destructor </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.40.3">fizGShot</A></B>( <!1><A HREF="fizGShot.html#DOC.40.3">fizGShot</A> &amp;rhs )
+<DD><I>Copy constructor </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizGShot.html">fizGShot</A> <B><A HREF="#DOC.40.4">operator= </A></B>( <!1><A HREF="fizGShot.html">fizGShot</A> &amp;rhs )
+<DD><I>Assignment operator </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="ShotStatus.html">ShotStatus</A> <B><A HREF="#DOC.40.5">execute</A></B>(<!1><A HREF="fizGTable.html">fizGTable</A>&amp; tbl, <!1><A HREF="fizGTableState.html">fizGTableState</A>&amp; state, double a, double b, double theta, double phi, double V, bool verbose = false)
+<DD><I>Executes a shot on the grapical GTable.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>vector&lt;<!1><A HREF="fizEvent.html">fizEvent</A>&gt;  <B><A HREF="#DOC.40.6">getEventList</A></B>()
+<DD><I>Returns the time-sorted list of events that occured on the last shot, in the form of a  Standard Template Library vector (array) of fizEvent objects.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>bool <B><A HREF="#DOC.40.7">getStateAt</A></B>(double time, <!1><A HREF="fizGTableState.html">fizGTableState</A> &amp;state)
+<DD><I>Updates the provided fizGTableState to reflect the state at the given absolute time.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>double <B><A HREF="#DOC.40.8">getLastTime</A></B>()
+<DD><I>Returns the time of the last event in the list.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>bool <B><A HREF="#DOC.40.9">save</A></B>(string tag = "", bool autogen = true)
+<DD><I>Saves a text representation of the shot to the working directory.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>bool <B><A HREF="#DOC.40.10">load</A></B>(string fname, <!1><A HREF="fizGTableState.html">fizGTableState</A>&amp; state, double &amp;a, double &amp;b, double &amp;theta, double &amp;phi, double &amp;V)
+<DD><I>Loads a shot from the specified file.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>bool <B><A HREF="#DOC.40.11">saveDynamics</A></B>(double timestep, string tag = "")
+<DD><I>Saves a verbose dump of the dynamics of all balls with the given timestep resolution.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.40.12">dump</A></B>()
+<DD><I>DEPRECATED.</I>
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Executes a shot and stores an event list representing the outcome of the shot.
+You should only ever need one instance of a fizGShot, but we have provided a 
+copy constructor and assignment operator. </BLOCKQUOTE>
+<DL>
+
+<A NAME="fizGShot"></A>
+<A NAME="DOC.40.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> fizGShot()</B></TT>
+<DD>Constructor 
+<DL><DT><DD></DL><P>
+<A NAME="~fizGShot"></A>
+<A NAME="DOC.40.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~fizGShot()</B></TT>
+<DD>Destructor 
+<DL><DT><DD></DL><P>
+<A NAME="fizGShot"></A>
+<A NAME="DOC.40.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> fizGShot( <!1><A HREF="fizGShot.html#DOC.40.3">fizGShot</A> &amp;rhs )</B></TT>
+<DD>Copy constructor 
+<DL><DT><DD></DL><P>
+<A NAME="operator= "></A>
+<A NAME="DOC.40.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizGShot.html">fizGShot</A> operator= ( <!1><A HREF="fizGShot.html">fizGShot</A> &amp;rhs )</B></TT>
+<DD>Assignment operator 
+<DL><DT><DD></DL><P>
+<A NAME="execute"></A>
+<A NAME="DOC.40.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="ShotStatus.html">ShotStatus</A> execute(<!1><A HREF="fizGTable.html">fizGTable</A>&amp; tbl, <!1><A HREF="fizGTableState.html">fizGTableState</A>&amp; state, double a, double b, double theta, double phi, double V, bool verbose = false)</B></TT>
+<DD>Executes a shot on the grapical GTable.  Returns a ShotStatus enum indicating the result.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>tab</B> -  reference to the <!1><A HREF="fizGTable.html">fizGTable</A> on which to <!1><A HREF="fizGShot.html#DOC.40.5">execute</A> the shot
+<BR><B>state</B> -  reference to the <!1><A HREF="fizGTableState.html">fizGTableState</A> with which to <!1><A HREF="fizGShot.html#DOC.40.5">execute</A> the shot
+<BR><B>a</B> -  right/left english in mm
+<BR><B>b</B> -  top/bottom english in mm
+<BR><B>theta</B> -  cue stick elevation in degrees
+<BR><B>phi</B> -  cue stick azimuth angle (heading) in degrees
+<BR><B>V</B> -  pre-impact cue stick velocity in m/s (max. 4.5 m/s)
+<BR><B>verbose</B> -  set to true for console output of shot data (optional, default = false) <BR><DD></DL><P>
+<A NAME="getEventList"></A>
+<A NAME="DOC.40.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>vector&lt;<!1><A HREF="fizEvent.html">fizEvent</A>&gt;  getEventList()</B></TT>
+<DD>Returns the time-sorted list of events that occured on the last shot, in the form of a 
+Standard Template Library vector (array) of fizEvent objects. 
+<DL><DT><DD></DL><P>
+<A NAME="getStateAt"></A>
+<A NAME="DOC.40.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool getStateAt(double time, <!1><A HREF="fizGTableState.html">fizGTableState</A> &amp;state)</B></TT>
+<DD>Updates the provided fizGTableState to reflect the state at the given absolute time.
+Returns true if the provided time is less than the time of the last event
+that occurred during the last shot.  This is used for shot animation in examples 1 and 3
+
+<DL><DT><DT><B>Parameters:</B><DD><B>time</B> -  absolute time in seconds (every shot begins at t=0 by definition)
+<BR><B>state</B> -  reference to the <!1><A HREF="fizGTableState.html">fizGTableState</A> <BR><DD></DL><P>
+<A NAME="getLastTime"></A>
+<A NAME="DOC.40.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>double getLastTime()</B></TT>
+<DD>Returns the time of the last event in the list. 
+<DL><DT><DD></DL><P>
+<A NAME="save"></A>
+<A NAME="DOC.40.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool save(string tag = "", bool autogen = true)</B></TT>
+<DD>Saves a text representation of the shot to the working directory.
+If autogen is not supplied or is supplied and is true, the filename is automatically generated and contains
+the optional string tag. Otherwise if autogen is false the string tag itself is used for the filename. 
+<DL><DT><DD></DL><P>
+<A NAME="load"></A>
+<A NAME="DOC.40.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool load(string fname, <!1><A HREF="fizGTableState.html">fizGTableState</A>&amp; state, double &amp;a, double &amp;b, double &amp;theta, double &amp;phi, double &amp;V)</B></TT>
+<DD>Loads a shot from the specified file. 
+
+<DL><DT><DT><B>Parameters:</B><DD><B>fname</B> -  the filename, including extension, of the shot to <!1><A HREF="fizGShot.html#DOC.40.10">load</A>
+<BR><B>state</B> -  reference to the initial table state to be populated from the file
+<BR><B>a</B> -  reference to the right/left english to be populated from the file
+<BR><B>b</B> -  reference to the top/bottom english to be populated from the file
+<BR><B>theta</B> -  reference to the cue stick elevation to be populated from the file
+<BR><B>phi</B> -  reference to the cue stick azimuth angle (heading) to be populated from the file
+<BR><B>V</B> -  reference to the pre-impact cue stick velocity to be populated from the file <BR><DD></DL><P>
+<A NAME="saveDynamics"></A>
+<A NAME="DOC.40.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool saveDynamics(double timestep, string tag = "")</B></TT>
+<DD>Saves a verbose dump of the dynamics of all balls with the given timestep resolution.  The 
+filename is automatically generated but contains the optional string tag. 
+
+<DL><DT><DT><B>Parameters:</B><DD><B>timestep</B> -  the timestep in seconds for the dynamics.  The file size is inversely proportional to the timestep.
+<BR><B>tag</B> -  the optional tag string for the filename. <BR><DD></DL><P>
+<A NAME="dump"></A>
+<A NAME="DOC.40.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void dump()</B></TT>
+<DD>DEPRECATED. USE operator &lt;&lt; INSTEAD.
+Writes a text representation of the shot to the standard output stream.
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.0.0; use operator &lt;&lt; instead. 
+<DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Friends:</B><DD>  ostream &amp; operator&lt;&lt;(ostream&amp; out, <!1><A HREF="fizGShot.html">fizGShot</A>&amp; rhs)<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

@@ -1,0 +1,125 @@
+Poolfiz Release 2.6.1
+Monday July 10, 2006
+
+
+
+I. Introduction
+===============
+Poolfiz is a C++ class library that models the outcome of a billiards shot.
+Poolfiz solves the dynamics of a pool shot analytically using no numerical integration whatsoever. It is an event-based system that continually calculates when the next event occurs and advances the balls on the table to that time in order to handle the event. Events include ball collisions, ball-rail interaction, and state changes in the dynamics of an individual ball.
+You interface with the library using the header file “poolfiz.h”. Both the library and the header file are found in the “bin” directory. Well-annotated example code is given in the “examples” directory.  HTML documentation of the API can be found in docs/html/index.html.
+
+
+
+II. Release 2.6.1 Notes
+=======================
+
+Release 2.6.1 fixes a minor bug in the way the positions of balls are calculated on the rack.  
+
+Release notes for relevant previous releases are below.
+
+Release 2.6.0 was built for the Computer Olympiad held in Torino on May 24, 2006 and was essentially a field-ready version of release 2.5.7.
+
+Release 2.5.7 was built for the QMIN system release 2.1.0 on Monday May 1 2006.
+
+Incremental release notes for the previous few releases are given below:
+
+Release 2.5.6 included one change:  fizShot::save(), fizShot::load() as well as the 'G' versions of these methods now save/load with 16 digits of precision (the old precision was 30 digits).
+
+Release 2.5.5 fixed a bug in trajectory calculation during the rolling state.  Ball motion is much more realistic (and correct!) now than it was in previous releases.
+
+Release 2.5.4 included minor changes to the poolfiz usage examples.  See section Examples below for more info on the examples.  
+
+The following documentation is for major changes to the library for release 2.5.0.
+
+See docs/html/index.html for new additions to the API.  Features and notes for release 2.5.0:
+
+• Several methods from earlier releases have been deprecated and replaced by newer prototypes that are more useful/efficient.  You are encouraged to review the HTML documentation starting from docs/html/index.html to see which methods have been labelled deprecated.  Deprecated methods may be removed in a future release to clean up the API.
+
+• To use Poolfiz release 2.5.0, you need to have the GNU Scientific Library (GSL) installed and link that library with your code.  On Linux systems, use 'apt-get install libgsl0-dev' to install the GSL.  The GSL is also available from http://www.gnu.org/software/gsl/.  Once you have installed the GSL, you may need to change your makefile to tell the make utility where to find the GSL on your system.  Examples are found in the makefiles in the examples directory of this poolfiz release.
+
+• In this release, the default table dimensions (length, width and pocket sizes) as well as physics parameters (coefficients of friction etc.) have been changed from those used at the ACG11/Computer Olympiad in September 2005.  The new default table dimensions are those measured directly from the 4'x8' bar pool table in the Robotics & Computer Vision Lab at Queen's University.  The default physics parameters such as coefficients of friction have not been measured directly yet, and are educated guesses.  Notably, the new default coefficient of rolling friction is slightly higher than the value used at the the ACG11/Computer Olympiad in September 2005.	If you instance a fizTable or fizGTable using the default constructor, all the parameters are set automatically.  A new constructor for both fizTable and fizGTable classes has been added to the API, allowing you to specify all of these parameters.  If you wish to instance a table with the exact physics parameters used at the ACG11/Computer Olympiad in September 2005, you would use fizGTable(2.4384, 1.2192, 0.1061, 0.15, 0.2, 0.01, 0.044, 0.05715, 1.0, 0.6, 0.1, 0.0005, 0.001).  Also note that this latter form of the table constructor accepts an optional boolean argument to notify the table that the game is being played on the robot.  For robot tables, collision detection for the robot and table is performed in isPhysicallyPossible() and before a shot is executed.
+
+• In addition, the constructor for fizTableStates and fizGTableStates now accepts a reference to the fizTable/fizGTable the state will be used on, for example: 	fizGTableState( fizGWindow& win, fizGTable& forTable ).  This form of the constructor sets the friction parameters for balls in the table state to those used by the given fizGTable.  The *default* constructor for fizTableStates and fizGTableStates sets the friction parameters to the same default values set by the *default* constructor for fizTable/fizGTable classes.  Therefore, the typical use for table state constructors is expected to be:
+			fizGTable myTable;
+			fizGTableState( someGWindow );   
+		OR,
+			fizGTable myTable;
+			fizGTableState( someGWindow, myTable );  
+	Note that the second form is considered to be the safest constructor to use, since, if in the future you decide to specify table parameters in the table constructor, those parameters will be automatically used througout your code whenever you instance a fizTableState/fizGTableState.	
+			
+• This release fixes a bug in the precision of numbers when loading shots from a file.  Data from shot files is loaded to the full 30 digits of precision now.  HOWEVER:  the format of the text in saved shot files has been changed slightly in this release to accomodate this change.  Spaces have been added to delimit certain values in the text of the table state.  For example, here is a snippet comparing the old format to the new format:
+
+		OLD format:  
+				CUE: state=STATIONARY r=(0.563325487995276041885972517775, 0.920863515613979499718766419392) v=(0 , 0 , 0) w=(0 , 0 , 0)
+				
+		NEW format:
+				CUE : state= STATIONARY r=( 0.563325487995276041885972517775 , 0.920863515613979499718766419392 ) v=( 0 , 0 , 0 ) w=( 0 , 0 , 0 )
+				
+	Note that the only changes are a single space before the ':' and the '=' characters, a single space after all '(' characters, a single space before all ')' characters, and spaces before all ',' characters.  
+	This may be an inconvenience if you want to keep using older shot files with the new Poolfiz library, but you could reformat all of your previously saved shot files according to these rules using a simple script easily enough.
+	
+• This release adds new methods for obtaining the pocket coordinates from a fizTable/fizGTable, such as fizPoint fizGTable::getPocketCenter(BoundaryId pocket).  See the html documentation for details on the new method syntax.  Use of these new methods is STRONGLY encouraged because the older method prototypes used for obtaining pocket coordinates are now considered deprecated and may be removed in a future release.
+	
+• This release adds more validity checking for the shot parameters.  The return value of int fizTable::isPhysicallyPossible() now includes CUE_STICK_COLLISION if the provided shot parameters would result in the cue striking the table (ie. any of the rails) during the shot.  The rails are 0.040005m high above the table surface by default, for non-robot tables the cue is 1.45m long by default, and for robot tables the cue is 1.0m long by default.  For robot tables, the follow-through of the cue is also checked for collision with the table.  The robot follow-through is 0.35m long.
+
+• This release adds setters for rail height and cue length for fizTable/fizGTable classes.
+
+• This release adds setters and getters for coefficients of friction.  Note that if you change the coefficient of friction on the fizTable, you also MUST change it for every fizTableState you're using as well.  
+
+• This release adds optional arguments to the fizShot::save() and fizGShot::save() methods to give you more flexibility in file naming.  See docs/html/index.html.
+
+
+
+III. API Documentation
+======================
+Look at docs/html/index.html for some easy-to-read HTML documentation of the API, or at bin/poolfiz.h.
+
+
+
+IV. Known Bugs and Deficiencies
+===============================
+1. Balls occasionally "tunnel" through each other or through the rails of the table, or on the break shot.  In randomized testing, this tunneling effect was observed on ~5 out of every 100000 shots.  This bug will be fixed in a future release.	
+2. Some Linux platforms may throw a runtime error when using the event list (vector<fizEvent>) returned from fizShot::getEventList() or fizGShot::getEventList().  A workaround is to add the line 'export MALLOC_CHECK_=0' to the file: /etc/profile.  This error has not been observed on Ubuntu Linux, however, which is the platform used to develop and test the poolfiz library.
+	
+
+
+V. Examples
+===========
+The skeleton code in the “main.cpp” files in the “examples” directory should be all you need to start working.
+• Example 1 is a simple console program that shows how to execute some code without the graphics output, using the non-graphical poolfiz classes such as fizShot and fizTable (no “G” in the class name).  The file “examples/ex1/main.cpp” is well-annotated and shows you where to add your code. 
+• Example 2 is a simple console program that shows how to execute some code using the graphical poolfiz classes such as fizGShot and fizGTable (note the “G” in the class name). The file “examples/ex2/main.cpp” is well-annotated and shows you where to add your code.  This example also shows how to use the shotViz utility to visualize shots.  Note that you can do this using either the graphical “G” or the non-graphical “non-G” classes; in this example you use the graphical “G” classes.  Also note that you must have a link to the shotViz application in the ex2 directory because it is called at runtime.
+• Example 3 is a fairly full-featured main program with more of a human-interactive feel. The file “examples/ex3/main.cpp” is well-annotated and shows you where to add your code. You can press various keys on the keyboard to adjust shot parameters in order to manually play against your AI, for example.  Note that in this example you must use the graphical poolfiz classes such as fizGShot and fizGTable (“G” in the class name).
+
+
+
+VI. Other Requirements and Dependencies
+=======================================
+• The GNU Scientific Library (GSL) is required to compile any of the code.  The GSL is freely available from http://www.gnu.org/software/gsl/ or can be found in most Linux/Cygwin package managers.  
+• The OpenGL and the GLUT libraries are required to compile the graphics code in examples 2 and 3, as well as any code that instances the graphical “G” classes.  These libraries can be found in most Linux/Cygwin package managers or are freely available for download.  Although it has not been tested for compatibility, the Mesa library may work in place of the GLUT library, and is also freely available for download. You may have to change the makefiles according to the installation directories for the OpenGL/GLUT/Mesa libraries.
+
+
+
+VII. Parameters Describing a Shot
+=================================
+The cue stick-cue ball interaction at the start of a shot is fully described by five parameters: a, b, theta, phi, and V (the figures below show pictorially what these parameters mean.)
+• a is the side English in millimetres. It is the horizontal offset of the cue tip point of impact from the center of the ball. Positive values of a correspond to right English (cue tip to right of centre, looking down cue stick towards ball); negative values of a correspond to left English (cue tip to left of centre, looking down cue stick towards ball)
+• b is the top/bottom English in millimetres. It is the vertical offset of the cue tip point of impact from the center of the ball. Positive values of b correspond to top English (cue tip to above centre, looking down cue stick towards ball); negative values of b correspond to bottom English (cue tip to below centre, looking down cue stick towards ball)
+• theta is the cue stick elevation above horizontal (in degrees)
+• phi is the cue stick azimuth angle (in degrees). It is the direction of the cue stick on the table surface, measured counter-clockwise with respect to the positive x-axis (table origin is at SW pocket).
+• V is the speed of the cue stick just before cue ball impact (in m/s). Typical shot speeds are 1-2 m/s; a very hard shot is 4.5 m/s.  The maximum allowed cue speed is 4.5 m/s.
+
+
+
+VIII. Table Geometry
+====================
+You can access the ball and table geometry using the methods in poolfiz.h. All dimensions are in meters.
+
+
+
+IX. General notes
+=================
+• Miscues will occur if a, b or theta are too big.
+• The shot will not execute and an error message will be displayed in the console if V (the cue stick speed) is less than 0 or greater than 4.5 m/s.
+• In general you should only create one instance of the fizShot / fizGShot class. The fizShot / fizGShot classes allocate a chunk of memory in which to store the events that occur on the shot and manage this memory automatically.  It should never be required to use multiple shot classes or copy shot instances, although copy constructors and assignment operators have been provided.
+

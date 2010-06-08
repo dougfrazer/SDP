@@ -1,0 +1,1 @@
+g++ subwin.cpp -I../QMIN/poolfiz/bin -I../ai/lib -I../ai -L/usr/bin -lglut -lgsl -lgslcblas -L../QMIN/poolfiz/bin -lpoolfiz -L../ai -lAI 

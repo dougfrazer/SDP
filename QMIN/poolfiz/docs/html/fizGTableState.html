@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  fizGTableState</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">fizGTableState</A></H2></H2><BLOCKQUOTE>The fizGTableState contains a snapshot of all the balls at a given time, and is  meant for use with graphical output and the other "fizG" classes.</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.38.1">fizGTableState</A></B>()
+<DD><I>Default constructor </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.38.2">fizGTableState</A></B>( <!1><A HREF="fizGWindow.html">fizGWindow</A>&amp; win)
+<DD><I>Constructor to initialize the fizGTableState correctly for graphical output.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.38.3">fizGTableState</A></B>( <!1><A HREF="fizGWindow.html">fizGWindow</A>&amp; win, <!1><A HREF="fizGTable.html">fizGTable</A>&amp; forTable )
+<DD><I>Constructs a table state for the given table.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.38.4">fizGTableState</A></B>( <!1><A HREF="fizGWindow.html">fizGWindow</A>&amp; win, <!1><A HREF="fizGTable.html">fizGTable</A>&amp; forTable, double ballRadius )
+<DD><I>Constructs a table state for the given table.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.38.5">fizGTableState</A></B>(<!1><A HREF="fizGTableState.html#DOC.38.5">fizGTableState</A> &amp;rhs)
+<DD><I>Copy constructor </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizGTableState.html">fizGTableState</A> <B><A HREF="#DOC.38.6">operator=</A></B>( <!1><A HREF="fizGTableState.html">fizGTableState</A> &amp;rhs )
+<DD><I>Assignment operator </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   <B><A HREF="#DOC.38.7">~fizGTableState</A></B>()
+<DD><I>Destructor </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.38.8">toFizTableState</A></B>(<!1><A HREF="fizTableState.html">fizTableState</A>&amp; state)
+<DD><I>Populates the given fizTableState with the ball state data from this fizGTableState.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.38.9">getNumBalls</A></B>()
+<DD><I>Returns the number of balls.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="fizBall.html">fizBall</A> <B><A HREF="#DOC.38.10">getBall</A></B>(<!1><A HREF="BallType.html">BallType</A> num)
+<DD><I>Returns the specified ball.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.38.11">getBall</A></B>(<!1><A HREF="BallType.html">BallType</A> btype, <!1><A HREF="BallState.html">BallState</A> &amp;state, double &amp;<!1><A HREF="fizVector.html#DOC.22.1">x</A>, double &amp;<!1><A HREF="fizVector.html#DOC.22.2">y</A> )
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.38.12">setBall</A></B>( <!1><A HREF="BallType.html">BallType</A> num, <!1><A HREF="BallState.html">BallState</A> state, <!1><A HREF="fizPoint.html">fizPoint</A> r )
+<DD><I>Sets the state and position of the specified ball.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.38.13">setBall</A></B>(<!1><A HREF="BallType.html">BallType</A> btype, <!1><A HREF="BallState.html">BallState</A> state, double <!1><A HREF="fizVector.html#DOC.22.1">x</A>, double <!1><A HREF="fizVector.html#DOC.22.2">y</A> )
+<DD><I>Sets the state and position of the specified ball.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.38.14">randomize</A></B>()
+<DD><I>Randomizes the locations of all 16 balls on the table.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.38.15">rack8ball</A></B>()
+<DD><I>Racks the balls for a game of 8 ball.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.38.16">rack9ball</A></B>()
+<DD><I>Racks the balls for a game of 9 ball.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.38.17">dump</A></B>()
+<DD><I>DEPRECATED.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.38.18">draw</A></B>(<!1><A HREF="fizGWindow.html">fizGWindow</A>&amp; win)
+<DD><I>Draws a representation of the current state on the screen.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>GTableState* <B><A HREF="#DOC.38.19">getTableState</A></B>()
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>The fizGTableState contains a snapshot of all the balls at a given time, and is 
+meant for use with graphical output and the other "fizG" classes.
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="fizGTableState"></A>
+<A NAME="DOC.38.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> fizGTableState()</B></TT>
+<DD>Default constructor 
+<DL><DT><DD></DL><P>
+<A NAME="fizGTableState"></A>
+<A NAME="DOC.38.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> fizGTableState( <!1><A HREF="fizGWindow.html">fizGWindow</A>&amp; win)</B></TT>
+<DD>Constructor to initialize the fizGTableState correctly for graphical output.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>win</B> -  the <!1><A HREF="fizGWindow.html">fizGWindow</A> used for graphical output <BR><DD></DL><P>
+<A NAME="fizGTableState"></A>
+<A NAME="DOC.38.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> fizGTableState( <!1><A HREF="fizGWindow.html">fizGWindow</A>&amp; win, <!1><A HREF="fizGTable.html">fizGTable</A>&amp; forTable )</B></TT>
+<DD>Constructs a table state for the given table.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>win</B> -  the <!1><A HREF="fizGWindow.html">fizGWindow</A> used for graphical output
+<BR><B>forTable</B> -  the table
+<BR><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="fizGTableState"></A>
+<A NAME="DOC.38.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> fizGTableState( <!1><A HREF="fizGWindow.html">fizGWindow</A>&amp; win, <!1><A HREF="fizGTable.html">fizGTable</A>&amp; forTable, double ballRadius )</B></TT>
+<DD>Constructs a table state for the given table.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>win</B> -  the <!1><A HREF="fizGWindow.html">fizGWindow</A> used for graphical output
+<BR><B>forTable</B> -  the table
+<BR><B>ballRadius</B> -  the radius of each ball in metres
+<BR><DT><B>Since:</B><DD>v2.5.0 
+<DD></DL><P>
+<A NAME="fizGTableState"></A>
+<A NAME="DOC.38.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> fizGTableState(<!1><A HREF="fizGTableState.html#DOC.38.5">fizGTableState</A> &amp;rhs)</B></TT>
+<DD>Copy constructor 
+<DL><DT><DD></DL><P>
+<A NAME="operator="></A>
+<A NAME="DOC.38.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizGTableState.html">fizGTableState</A> operator=( <!1><A HREF="fizGTableState.html">fizGTableState</A> &amp;rhs )</B></TT>
+<DD>Assignment operator 
+<DL><DT><DD></DL><P>
+<A NAME="~fizGTableState"></A>
+<A NAME="DOC.38.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~fizGTableState()</B></TT>
+<DD>Destructor 
+<DL><DT><DD></DL><P>
+<A NAME="toFizTableState"></A>
+<A NAME="DOC.38.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void toFizTableState(<!1><A HREF="fizTableState.html">fizTableState</A>&amp; state)</B></TT>
+<DD>Populates the given fizTableState with the ball state data from this fizGTableState.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>state</B> -  the <!1><A HREF="fizTableState.html">fizTableState</A> to populate <BR><DD></DL><P>
+<A NAME="getNumBalls"></A>
+<A NAME="DOC.38.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int getNumBalls()</B></TT>
+<DD>Returns the number of balls. 
+<DL><DT><DD></DL><P>
+<A NAME="getBall"></A>
+<A NAME="DOC.38.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="fizBall.html">fizBall</A> getBall(<!1><A HREF="BallType.html">BallType</A> num)</B></TT>
+<DD>Returns the specified ball. If num is invalid, simply returns the CUE ball. 
+
+<DL><DT><DT><B>Since:</B><DD>v2.0.0
+<DD></DL><P>
+<A NAME="getBall"></A>
+<A NAME="DOC.38.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void getBall(<!1><A HREF="BallType.html">BallType</A> btype, <!1><A HREF="BallState.html">BallState</A> &amp;state, double &amp;<!1><A HREF="fizVector.html#DOC.22.1">x</A>, double &amp;<!1><A HREF="fizVector.html#DOC.22.2">y</A> )</B></TT>
+<DD>DEPRECATED.  USE fizGTableState::getBall(BallType num) INSTEAD.
+Returns the state and position of the specified ball.
+If num is greater than 16, simply returns the CUE ball.
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.0.0 
+<DD></DL><P>
+<A NAME="setBall"></A>
+<A NAME="DOC.38.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void setBall( <!1><A HREF="BallType.html">BallType</A> num, <!1><A HREF="BallState.html">BallState</A> state, <!1><A HREF="fizPoint.html">fizPoint</A> r )</B></TT>
+<DD>Sets the state and position of the specified ball. 
+
+<DL><DT><DT><B>Since:</B><DD>v2.0.0 
+<DD></DL><P>
+<A NAME="setBall"></A>
+<A NAME="DOC.38.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void setBall(<!1><A HREF="BallType.html">BallType</A> btype, <!1><A HREF="BallState.html">BallState</A> state, double <!1><A HREF="fizVector.html#DOC.22.1">x</A>, double <!1><A HREF="fizVector.html#DOC.22.2">y</A> )</B></TT>
+<DD>Sets the state and position of the specified ball. 
+<DL><DT><DD></DL><P>
+<A NAME="randomize"></A>
+<A NAME="DOC.38.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void randomize()</B></TT>
+<DD>Randomizes the locations of all 16 balls on the table. 
+<DL><DT><DD></DL><P>
+<A NAME="rack8ball"></A>
+<A NAME="DOC.38.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void rack8ball()</B></TT>
+<DD>Racks the balls for a game of 8 ball. 
+<DL><DT><DD></DL><P>
+<A NAME="rack9ball"></A>
+<A NAME="DOC.38.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void rack9ball()</B></TT>
+<DD>Racks the balls for a game of 9 ball. 
+<DL><DT><DD></DL><P>
+<A NAME="dump"></A>
+<A NAME="DOC.38.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void dump()</B></TT>
+<DD>DEPRECATED. USE operator &lt;&lt; INSTEAD.
+Writes a text representation of the table state to the given output stream.
+
+<DL><DT><DT><B><I>Deprecated:</I></B><DD>since v2.0.0; use operator &lt;&lt; instead. 
+<DD></DL><P>
+<A NAME="draw"></A>
+<A NAME="DOC.38.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void draw(<!1><A HREF="fizGWindow.html">fizGWindow</A>&amp; win)</B></TT>
+<DD>Draws a representation of the current state on the screen. 
+<DL><DT><DD></DL><P>
+<A NAME="getTableState"></A>
+<A NAME="DOC.38.19"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>GTableState* getTableState()</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Friends:</B><DD>  ostream &amp; operator&lt;&lt;(ostream &amp;out, <!1><A HREF="fizGTableState.html">fizGTableState</A> &amp;rhs)<BR><DT><B>See Also:</B><DD><!1><A HREF="fizGWindow.html">fizGWindow</A>
+<BR><!1><A HREF="fizGTable.html">fizGTable</A>
+<BR><!1><A HREF="fizGShot.html">fizGShot</A> <BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>
